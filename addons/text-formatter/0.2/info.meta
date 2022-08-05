@@ -1,5 +1,5 @@
 Addon: text-formatter
-Name: text-formatter.py
+Name: text_formatter.py
 Version: 0.2
 Version-Support: 3.8+
 Download: "addons/text-formatter/0.2/text-formatter.py"

@@ -1,3 +1,4 @@
 # List of packages available
 config: "meta/packages/config.meta"
 text-formatter: "meta/packages/text-formatter.meta"
+argument-parser:"meta/packages/argument-parser.meta"

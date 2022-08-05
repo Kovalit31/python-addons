@@ -1,0 +1,5 @@
+Addon: argument-parser
+Name: argument_parser.py
+Version: 0.1-alpha
+Version-Support: 3.8+
+Download: "addons/argument-parser/0.1-alpha/argument-parser.py"
