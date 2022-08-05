@@ -1,3 +1,3 @@
 # List of packages available
-config: "https://raw.githubusercontent.com/Kovalit31/python-addons/main/meta/packages/config.meta"
-text-formatter: "https://raw.githubusercontent.com/Kovalit31/python-addons/main/packages/text-formatter.meta"
+config: "meta/packages/config.meta"
+text-formatter: "meta/packages/text-formatter.meta"

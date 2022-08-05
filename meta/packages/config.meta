@@ -1,3 +1,3 @@
 Addon: config
 Versions:
-    0.2-alpha: "https://raw.githubusercontent.com/Kovalit31/python-addons/main/config/0.2-alpha/info.meta"
+    0.2-alpha: "addons/config/0.2-alpha/info.meta"
