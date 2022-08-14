@@ -15,7 +15,7 @@ def _check_hashsums(name: str, file: str):
     try:
         hash_here = "A"
         with open(file, "rb") as f:
-            hash_here = hashlib.sha256(f).hexdigest().lower()
+            hash_here = hashlib.sha256(f.read()).hexdigest().lower()
             f.close()
         if hash_here == dictation[name]:
             return True
@@ -50,7 +50,7 @@ def _install_default_addons():
     _main, _plugindir = _get_install_paths()
     socket = urllib3.PoolManager()
     # /home/user/git_repos/github.com/Kovalit31/python-addons/branch/installer/installer/install-addon.py
-    url_main_repo = "file:///home/user/git_repos/github.com/Kovalit31/python-addons/branch/main"
+    url_main_repo = "https://raw.githubusercontent.com/Kovalit31/python-addons/main"
     addon_urls = [["addons/argument-parser/0.1-alpha/argument-parser.py", "addons/config/0.2-alpha/config.py", "addons/text-formatter/0.2/text-formatter.py"],["arg_parser.py","config.py", "formattext.py"]]
     for x in range(len(addon_urls[0])):
         _out = os.path.join(_plugindir, addon_urls[1][x])
@@ -96,16 +96,13 @@ def _check_if_can_run():
                 not_found = 1
         else:
             not_found = 1
-    else:
-        if not not_found:
-            print("All recommends is satished, continue...\n")
     return True, not_found
     
 def main(args):
     attempts = 3
     current = 0
     while current < attempts:
-        runnable, *other = _check_if_can_run() # BUG #1: hashlib: object supporting the buffer API required
+        runnable, *other = _check_if_can_run()
         if runnable:
             break
         else:
@@ -114,6 +111,7 @@ def main(args):
     else:
         raise Exception("Can't continue, excepted cyclic deleting and/or modificing!")
     text_decor, arg_parse, conf_parse = _import_default_addons()
+    print("I can run!")
 
 if __name__ == "__main__":
     main(sys.argv)
